@@ -9,7 +9,7 @@ class PasswordForm extends FormzInput<String, PasswordValidError>{
 
   @override
   PasswordValidError? validator(String value) {
-    if(value.length < 4){
+    if(value.length < 6){
       return PasswordValidError.tooShort;
     }
     return null;
