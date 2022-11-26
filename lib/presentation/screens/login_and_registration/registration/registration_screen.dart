@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oggetto_r136a1/core/extension/empty_through_num.dart';
 import 'package:oggetto_r136a1/presentation/resources/app_colors.dart';
-import 'package:oggetto_r136a1/presentation/screens/registration/registration_bloc/registration_bloc.dart';
-import 'package:oggetto_r136a1/presentation/widgets/appbars/back_appbar.dart';
+import 'package:oggetto_r136a1/presentation/screens/login_and_registration/registration/registration_bloc/registration_bloc.dart';
+import 'package:oggetto_r136a1/presentation/widgets/appbars/custom_appbar.dart';
 import 'package:oggetto_r136a1/presentation/widgets/buttons/base_button.dart';
 import 'package:oggetto_r136a1/presentation/widgets/inputs/default_input.dart';
 import 'package:oggetto_r136a1/presentation/widgets/safe_area_with_background.dart';
@@ -24,7 +24,7 @@ class RegistrationScreen extends StatelessWidget {
     return BlocListener<RegistrationBloc, RegistrationState>(
       listener: (context, state) {
         if(state is SuccessState){
-          Navigator.of(context).pushNamed('/main');
+          Navigator.of(context).pushNamed('/navigation');
         }
         if(state.error is NetworkError){
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Проблемы с интернетом', style: TextStyle(color: Colors.black))));
@@ -33,7 +33,7 @@ class RegistrationScreen extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const BackAppBar(
+            const CustomAppBar(
               title: 'Регистрация',
             ),
             23.emptyHeight,

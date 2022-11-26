@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:oggetto_r136a1/core/extension/empty_through_num.dart';
 import 'package:oggetto_r136a1/presentation/resources/app_colors.dart';
 import 'package:oggetto_r136a1/presentation/resources/app_images.dart';
-import 'package:oggetto_r136a1/presentation/screens/login/login_bloc/login_bloc.dart';
+import 'package:oggetto_r136a1/presentation/screens/login_and_registration/login/login_bloc/login_bloc.dart';
 import 'package:oggetto_r136a1/presentation/widgets/buttons/base_button.dart';
 import 'package:oggetto_r136a1/presentation/widgets/inputs/default_input.dart';
 import 'package:oggetto_r136a1/presentation/widgets/safe_area_with_background.dart';

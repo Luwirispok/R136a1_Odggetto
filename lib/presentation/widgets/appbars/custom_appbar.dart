@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:oggetto_r136a1/core/extension/empty_through_num.dart';
 import 'package:oggetto_r136a1/presentation/resources/app_colors.dart';
 
-class BackAppBar extends StatelessWidget {
-  const BackAppBar({Key? key, this.title}) : super(key: key);
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({Key? key, this.title, this.backgroundColor, this.isBack = false}) : super(key: key);
 
   final String? title;
+  final Color? backgroundColor;
+  final bool isBack;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      color: backgroundColor,
       height: 64,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
+          isBack ? IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
@@ -24,7 +27,7 @@ class BackAppBar extends StatelessWidget {
               size: 24,
               color: AppColors.onBackground,
             ),
-          ),
+          ) : 0.emptyWidth,
           Text(
             title ?? '',
             style: const TextStyle(
@@ -33,7 +36,7 @@ class BackAppBar extends StatelessWidget {
               height: 28 / 22,
             ),
           ),
-          24.emptyWidth,
+          isBack ? 24.emptyWidth : 0.emptyWidth,
         ],
       ),
     );

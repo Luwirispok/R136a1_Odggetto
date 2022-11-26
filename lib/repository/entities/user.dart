@@ -1,5 +1,5 @@
-import 'AboutMe.dart';
-import 'Job.dart';
+import 'about_me.dart';
+import 'job.dart';
 
 class User {
   String? name;

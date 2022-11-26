@@ -5,6 +5,7 @@ class AboutMe {
   List<String>? hobby;
   List<String>? facts;
 
+
   AboutMe({this.city, this.description, this.professionalSkills, this.hobby, this.facts});
 
   AboutMe.fromJson(Map<String, dynamic> json) {

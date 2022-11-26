@@ -4,7 +4,12 @@ class Job {
   List<String>? projects;
   String? team;
 
-  Job({this.jobTitle, this.grade, this.projects, this.team});
+  Job({
+    this.jobTitle,
+    this.grade,
+    this.projects,
+    this.team,
+  });
 
   Job.fromJson(Map<String, dynamic> json) {
     jobTitle = json['jobTitle'];

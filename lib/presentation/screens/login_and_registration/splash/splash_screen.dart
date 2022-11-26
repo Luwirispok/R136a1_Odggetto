@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:oggetto_r136a1/presentation/screens/splash/splash_bloc/splash_bloc.dart';
 import 'package:oggetto_r136a1/presentation/resources/app_images.dart';
+import 'package:oggetto_r136a1/presentation/screens/login_and_registration/splash/splash_bloc/splash_bloc.dart';
 import 'package:oggetto_r136a1/presentation/widgets/safe_area_with_background.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class SplashScreen extends StatelessWidget {
             Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
           }
           if(state is MainState) {
-            Navigator.pushNamedAndRemoveUntil(context, '/main', (_) => false);
+            Navigator.pushNamedAndRemoveUntil(context, '/navigation', (_) => false);
           }
         },
         child: Scaffold(
