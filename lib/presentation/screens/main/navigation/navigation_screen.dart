@@ -7,7 +7,6 @@ import 'package:oggetto_r136a1/presentation/screens/main/employees/employees_scr
 import 'package:oggetto_r136a1/presentation/screens/main/games/games_screen.dart';
 import 'package:oggetto_r136a1/presentation/screens/main/profile/profile_screen.dart';
 import 'package:oggetto_r136a1/presentation/screens/main/schedule/schedule_screen.dart';
-import 'package:oggetto_r136a1/presentation/widgets/safe_area_with_background.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
@@ -34,7 +33,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeAreaWithBackground(
+      body: SafeArea
+
+        
+        (
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: ConvexAppBar(

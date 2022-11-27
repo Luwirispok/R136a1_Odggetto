@@ -1,6 +1,6 @@
 class Job {
   String? jobTitle;
-  List<String>? grade;
+  String? grade;
   List<String>? projects;
   String? team;
 
@@ -13,7 +13,7 @@ class Job {
 
   Job.fromJson(Map<String, dynamic> json) {
     jobTitle = json['jobTitle'];
-    grade = json['grade'].cast<String>();
+    grade = json['grade'];
     projects = json['projects'].cast<String>();
     team = json['team'];
   }

@@ -1,7 +1,8 @@
 class Event {
   String? title;
   String? description;
-  String? dateAndTime;
+  String? date;
+  String? time;
   String? address;
   String? photoUrl;
   String? creatorId;
@@ -10,7 +11,8 @@ class Event {
   Event(
       {this.title,
       this.description,
-      this.dateAndTime,
+      this.date,
+      this.time,
       this.address,
       this.photoUrl,
       this.creatorId,
@@ -19,7 +21,8 @@ class Event {
   Event.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     description = json['description'];
-    dateAndTime = json['dateAndTime'];
+    date = json['date'];
+    time = json['time'];
     address = json['address'];
     photoUrl = json['photoUrl'];
     creatorId = json['creator'];
@@ -30,7 +33,8 @@ class Event {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['title'] = this.title;
     data['description'] = this.description;
-    data['dateAndTime'] = this.dateAndTime;
+    data['date'] = this.date;
+    data['time'] = this.time;
     data['address'] = this.address;
     data['photoUrl'] = this.photoUrl;
     data['creator'] = this.creatorId;

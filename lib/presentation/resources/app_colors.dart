@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -7,7 +5,7 @@ class AppColors {
   static const Color onBackground = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFF111111);
   static const Color onPrimary = Color(0xFFFFFFFF);
-  static Color tertiary = const Color(0xFF151515).withOpacity(0.65);
+  static Color tertiary = const Color(0xFF151515).withOpacity(0.75);
   static const Color onTertiary1 = Color(0xFFFFFFFF);
   static const Color onTertiary2 = Color(0xFFFFED00);
   static LinearGradient secondary = const LinearGradient(
