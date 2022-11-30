@@ -11,9 +11,9 @@ class AboutMe {
   AboutMe.fromJson(Map<String, dynamic> json) {
     city = json['city'];
     description = json['description'];
-    professionalSkills = json['professional skills'].cast<String>();
-    hobby = json['hobby'].cast<String>();
-    facts = json['facts'].cast<String>();
+    professionalSkills = json['professional skills']?.cast<String>() ?? [];
+    hobby = json['hobby']?.cast<String>() ?? [];
+    facts = json['facts']?.cast<String>() ?? [];
   }
 
   Map<String, dynamic> toJson() {

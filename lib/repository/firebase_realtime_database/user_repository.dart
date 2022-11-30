@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:firebase_database/firebase_database.dart';
@@ -12,22 +13,17 @@ class UserRepository {
     await ref.child('/$token').set(user.toJson());
   }
 
-  Future<void> updateUserDataProfile(String token, User user) async {
+  Future<void> updateUserDataProfile(String token, UserOd user) async {
     await ref.child('/$token').update(user.toJson());
   }
 
-  Future<List<Employee>?> getAllUsers() async {
-    try{
-      List<Employee> result = await ref.get().then((value) => value.children
-          .map(
-            (el) => Employee(
-              id: el.key,
-              user: User.fromJson(
-                (el.value as Map<String, dynamic>),
-              ),
-            ),
-          )
-          .toList());
+  Future<List<UserOd>?> getAllUsers() async {
+    try {
+      DataSnapshot data = await ref.get();
+      var data0 = data.children;
+      List<Map<String, dynamic>> data1 =
+          data0.map((e) => jsonDecode(jsonEncode(e.value)) as Map<String, dynamic>).toList();
+      List<UserOd> result = data1.map((e) => UserOd.fromJson(e)).toList();
       log(result.toString());
       return result;
     } catch(e){
@@ -36,10 +32,15 @@ class UserRepository {
     return null;
   }
 
-  Future<User?> getUser(String token) async {
-    try{
-      User result =
-          await ref.child("/$token").get().then((value) => User.fromJson(value.value as Map<String, dynamic>));
+  Future<UserOd?> getUser(String token) async {
+    try {
+      DataSnapshot dataSnapshot = await ref.child(token).get();
+      log(dataSnapshot.toString());
+      var data = dataSnapshot.value;
+      String data1 = jsonEncode(data);
+      Map<String, dynamic> data2 = jsonDecode(data1);
+      log(data2['name']);
+      UserOd result = UserOd.fromJson(data2);
       log(result.toString());
       return result;
     } catch(e){

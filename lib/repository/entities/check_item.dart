@@ -6,16 +6,16 @@ class CheckItem {
   CheckItem({this.title, this.description, this.completed});
 
   CheckItem.fromJson(Map<String, dynamic> json) {
-    title = json['title'];
+    title = json['checkTitle'];
     description = json['description'];
-    completed = json['completed'];
+    completed = json['flagCheck'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    data['title'] = this.title;
+    data['checkTitle'] = this.title;
     data['description'] = this.description;
-    data['completed'] = this.completed;
+    data['flagCheck'] = this.completed;
     return data;
   }
 }

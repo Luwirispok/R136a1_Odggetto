@@ -11,12 +11,12 @@ import 'package:oggetto_r136a1/repository/entities/user.dart';
 class EmployeeDetailsScreen extends StatelessWidget {
   EmployeeDetailsScreen({Key? key, required this.user}) : super(key: key);
 
-  User user;
+  UserOd user;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeAreaWithBackground(
+      body: SafeArea(
         child: _buildBody(context),
       ),
     );

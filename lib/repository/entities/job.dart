@@ -14,7 +14,7 @@ class Job {
   Job.fromJson(Map<String, dynamic> json) {
     jobTitle = json['jobTitle'];
     grade = json['grade'];
-    projects = json['projects'].cast<String>();
+    projects = json['projects']?.cast<String>() ?? [];
     team = json['team'];
   }
 

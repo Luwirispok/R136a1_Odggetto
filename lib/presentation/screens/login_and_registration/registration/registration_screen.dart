@@ -82,6 +82,7 @@ class RegistrationScreen extends StatelessWidget {
               30.emptyHeight,
               DefaultInput(
                 label: 'Email',
+                keyboardType: TextInputType.emailAddress,
                 error: !state.email.valid && state.error != null ? 'Введите почту правильно' : null,
                 textInputAction: TextInputAction.next,
                 onChanged: (text) {

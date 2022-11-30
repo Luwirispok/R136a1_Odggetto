@@ -26,7 +26,7 @@ class Event {
     address = json['address'];
     photoUrl = json['photoUrl'];
     creatorId = json['creator'];
-    membersId = json['members'].cast<String>();
+    membersId = json['members']?.cast<String>();
   }
 
   Map<String, dynamic> toJson() {

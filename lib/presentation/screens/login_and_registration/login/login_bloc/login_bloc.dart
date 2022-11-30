@@ -20,6 +20,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         try{
           await SignWithFirebaseAuth().signInWithEmail(state.email!, state.password!);
           log('оке');
+          emit(SuccessState());
         }catch(e){
           emit(state.copyWith(error: NotLoginError(error: e.toString())));
           log("SignInBloc: $e");

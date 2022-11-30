@@ -25,6 +25,9 @@ class LoginScreen extends StatelessWidget {
         if(state.error is NotLoginError){
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Ошибка в логине или пароле', style: TextStyle(color: Colors.black),)));
         }
+        if(state is SuccessState){
+          Navigator.popAndPushNamed(context, '/navigation');
+        }
       },
       child: SingleChildScrollView(
         child: Column(
@@ -36,9 +39,11 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 46),
               child: DefaultInput(
                 label: 'Email',
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (text) {
                   context.read<LoginBloc>().add(EmailEvent(email: text));
                 },
+
                 textInputAction: TextInputAction.next,
               ),
             ),

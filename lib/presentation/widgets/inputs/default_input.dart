@@ -12,7 +12,7 @@ class DefaultInput extends StatelessWidget {
     this.onChanged,
     this.onTap,
     this.textInputAction,
-    this.inputFormatters,
+    this.inputFormatters, this.keyboardType,
   }) : super(key: key);
 
   final String? error;
@@ -22,10 +22,12 @@ class DefaultInput extends StatelessWidget {
   final VoidCallback? onTap;
   final TextInputAction? textInputAction;
   final List<TextInputFormatter>? inputFormatters;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return BaseInput(
+      keyboardType: keyboardType,
       error: error,
       label: label,
       text: text,

@@ -40,7 +40,7 @@ class ListTextTile extends StatelessWidget {
             height: 18 / 15,
           ),
         ),
-        ...stringWithWidget(textList!),
+        ...stringWithWidget(textList ?? []),
       ],
     );
   }

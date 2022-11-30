@@ -9,6 +9,7 @@ import 'package:oggetto_r136a1/presentation/screens/login_and_registration/splas
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oggetto_r136a1/presentation/screens/main/navigation/navigation_bloc/navigation_bloc.dart';
 import 'package:oggetto_r136a1/presentation/screens/main/navigation/navigation_screen.dart';
+import 'package:oggetto_r136a1/presentation/screens/main/profile/profile_bloc/profile_bloc.dart';
 import 'firebase_options.dart';
 import 'presentation/screens/login_and_registration/registration/registration_bloc/registration_bloc.dart';
 
@@ -34,6 +35,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider<NavigationBloc>(
           create: (context) => NavigationBloc(),
+        ),
+        BlocProvider<ProfileBloc>(
+          create: (context) => ProfileBloc(),
         ),
 
       ],

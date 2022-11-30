@@ -28,6 +28,10 @@ class LoginState {
   }
 }
 
+class SuccessState extends LoginState{
+
+}
+
 class ErrorState {}
 
 class NetworkError extends ErrorState {

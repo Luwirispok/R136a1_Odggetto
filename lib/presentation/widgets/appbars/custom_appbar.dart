@@ -18,22 +18,26 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          isBack ? IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              size: 24,
-              color: AppColors.onBackground,
-            ),
-          ) : 0.emptyWidth,
-          Text(
-            title ?? '',
-            style: const TextStyle(
-              color: AppColors.onBackground,
-              fontSize: 22,
-              height: 28 / 22,
+          isBack
+              ? IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    size: 24,
+                    color: AppColors.onBackground,
+                  ),
+                )
+              : 0.emptyWidth,
+          Expanded(
+            child: Text(
+              title ?? '',
+              style: const TextStyle(
+                color: AppColors.onBackground,
+                fontSize: 20,
+                height: 28 / 22,
+              ),
             ),
           ),
           isBack ? 24.emptyWidth : 0.emptyWidth,

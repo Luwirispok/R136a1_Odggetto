@@ -1,10 +1,21 @@
 part of 'navigation_bloc.dart';
 
-abstract class NavigationState extends Equatable {
-  const NavigationState();
-}
+class NavigationState {
+  const NavigationState( {this.listEmployee, required this.token, this.userOd});
 
-class MainInitial extends NavigationState {
-  @override
-  List<Object> get props => [];
+  final String token;
+  final UserOd? userOd;
+  final List<UserOd>? listEmployee;
+
+  NavigationState copyWith({
+    String? token,
+    UserOd? userOd,
+    List<UserOd>? listEmployee,
+  }) {
+    return NavigationState(
+      token: token ?? this.token,
+      userOd: userOd ?? this.userOd,
+      listEmployee:  listEmployee ?? this.listEmployee,
+    );
+  }
 }
